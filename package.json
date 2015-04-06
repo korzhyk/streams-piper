@@ -1,0 +1,38 @@
+{
+  "name": "stream-piper",
+  "description": "Simple tool for organize stream piping",
+  "author": "Andrii Korzh <andrii.korzh@gmail.com>",
+  "keywords": [
+    "streams",
+    "stream",
+    "pipe"
+  ],
+  "version": "0.0.1",
+  "dependencies": {
+    "debug": "~2.1"
+  },
+  "devDependencies": {
+    "chai": "^1",
+    "through2": "~1.1",
+    "mocha": "^1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/korzhyk/stream-piper.git"
+  },
+  "bugs": {
+    "url": "http://github.com/korzhyk/stream-piper/issues"
+  },
+  "scripts": {
+    "gendocs": "gendocs > README.md",
+    "test": "mocha --reporter spec"
+  },
+  "homepage": "https://github.com/korzhyk/stream-piper",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "license": "MIT"
+}
