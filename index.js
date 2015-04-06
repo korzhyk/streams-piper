@@ -2,14 +2,14 @@
 'use strict';
 
 var assert = require('assert');
-var dbg = require('debug')('stream piper');
+var dbg = require('debug')('streams piper');
 var Duplex = require('stream').Duplex;
 var Transform = require('stream').Transform;
 var Writable = require('stream').Writable;
 var Readable = require('stream').Readable;
 
 /**
-  # Stream-piper
+  # Streams-piper
 
   This module can organize and chaining streams for piping.
 

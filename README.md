@@ -1,11 +1,11 @@
-# Stream-piper
+# Streams-piper
 
 This module can organize and chaining streams for piping.
 
 
-[![NPM](https://nodei.co/npm/stream-piper.png)](https://nodei.co/npm/stream-piper/)
+[![NPM](https://nodei.co/npm/streams-piper.png)](https://nodei.co/npm/streams-piper/)
 
-[![Build Status](https://img.shields.io/travis/korzhyk/stream-piper.svg?branch=master)](https://travis-ci.org/korzhyk/stream-piper) 
+[![Build Status](https://img.shields.io/travis/korzhyk/streams-piper.svg?branch=master)](https://travis-ci.org/korzhyk/streams-piper) 
 
 ## Example Usage
 
