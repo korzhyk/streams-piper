@@ -1,6 +1,6 @@
 # Stream-piper
 
-This module helps me sort and chaining streams in my projects.
+This module can organize and chaining streams for piping.
 
 
 [![NPM](https://nodei.co/npm/stream-piper.png)](https://nodei.co/npm/stream-piper/)
