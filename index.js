@@ -3,6 +3,8 @@
 
 var assert = require('assert');
 var dbg = require('debug')('streams piper');
+var _ = require('lodash');
+
 var Duplex = require('stream').Duplex;
 var Transform = require('stream').Transform;
 var Writable = require('stream').Writable;
@@ -36,14 +38,6 @@ var piper = module.exports = function (source, pipes) {
   assert(pipes instanceof Array, 'Pipes must be an array of streams');
 
   function reduceFn(readable, current) {
-    dbg('pipe to ' + (isTransform(current)
-      ? 'transform'
-      : isDuplex(current)
-      ? 'duxplex'
-      : isWritable(current)
-      ? 'writable'
-      : 'readable'));
-
     readable.pipe(current);
 
     if (current['readable'] !== undefined) {      
@@ -57,6 +51,14 @@ var piper = module.exports = function (source, pipes) {
 
   return source;
 };
+
+_.extend(piper, {
+  isReadable: isReadable,
+  isWritable: isWritable,
+  isTransform: isTransform,
+  isDuplex: isDuplex,
+  sorter: sortStreams
+})
 
 function isReadable(stream) {
   return stream instanceof Readable || stream['readable'] !== undefined;
@@ -77,8 +79,6 @@ function isTransform(stream) {
 function isDuplex(stream) {
   return stream instanceof Duplex;
 }
-
-piper.sorter = sortStreams;
 
 function sortStreams(arr) {
 
