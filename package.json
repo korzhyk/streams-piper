@@ -7,11 +7,7 @@
     "stream",
     "pipe"
   ],
-  "version": "1.0.1",
-  "dependencies": {
-    "debug": "~2.1",
-    "lodash": "^3.7.0"
-  },
+  "version": "1.0.3",
   "devDependencies": {
     "chai": "^1",
     "through2": "~1.1",

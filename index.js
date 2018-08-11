@@ -2,8 +2,6 @@
 'use strict';
 
 var assert = require('assert');
-var dbg = require('debug')('streams piper');
-var _ = require('lodash');
 
 var Duplex = require('stream').Duplex;
 var Transform = require('stream').Transform;
@@ -40,7 +38,7 @@ var piper = module.exports = function (source, pipes) {
   function reduceFn(readable, current) {
     readable.pipe(current);
 
-    if (current['readable'] !== undefined) {      
+    if (current['readable'] !== undefined) {
       return current;
     } else {
       return readable;
@@ -52,7 +50,7 @@ var piper = module.exports = function (source, pipes) {
   return source;
 };
 
-_.extend(piper, {
+Object.assign(piper, {
   isReadable: isReadable,
   isWritable: isWritable,
   isTransform: isTransform,
