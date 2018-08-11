@@ -14,7 +14,7 @@ describe('streams', function() {
 		var t1 = through();
 		var d =  zlib.createGunzip();
 
-		expect(piper.sorter([t0, hole, t1, d])).to.eql([d, t0, t1, hole]);
+		expect(piper.sortStreams([t0, hole, t1, d])).to.eql([d, t0, t1, hole]);
 		
 	});
 });
