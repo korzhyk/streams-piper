@@ -1,6 +1,7 @@
 /* jshint node: true */
 'use strict';
 
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 var assert = require('assert');
 
 var Duplex = require('stream').Duplex;
@@ -50,13 +51,19 @@ var piper = module.exports = function (source, pipes) {
   return source;
 };
 
-Object.assign(piper, {
+var proto = {
   isReadable: isReadable,
   isWritable: isWritable,
   isTransform: isTransform,
   isDuplex: isDuplex,
-  sorter: sortStreams
-})
+  sortStreams: sortStreams
+}
+
+for (var key in proto) {
+  if (hasOwnProperty.call(proto, key)) {
+    piper[key] = proto[key];
+  }
+}
 
 function isReadable(stream) {
   return stream instanceof Readable || stream['readable'] !== undefined;
